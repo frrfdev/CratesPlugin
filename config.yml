@@ -1,0 +1,375 @@
+# SOUNDS REFERENCES: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+
+# REQUIRED
+spawnChance: 1
+
+# REQUIRED
+crateType: shulker
+
+# REQUIRED
+# True = chests and shulkers doesnt drop
+# False = chests and shulkers drop
+destroyCrates: false
+
+# REQUIRED
+# Set the blocks that the plugin will spawn crates
+effectiveBlocks: 
+   - STONE
+   - ANDESITE
+   - GRANITE
+   - DIORITE
+
+# REQUIRED
+# Define the loot rarities existent in your world
+# FORMAT:
+# lootRatities:
+#   rarityName:
+#      name: rarityName
+#      chance: 100 (You can use decimals if you want, from 0 up to 100)
+lootRarities:
+   common:
+      name: common
+      chance: 35
+   uncommon:
+      name: uncommon
+      chance: 30  
+   rare:
+      name: rare
+      chance: 20
+   epic:
+      name: epic
+      chance: 10
+   legendary:
+      name: legendary
+      chance: 5
+
+# REQUIRED
+# Define the crates that can spawn
+# -------- GLOSSARY -----------
+# name: Name of this crate
+# color: color of this crate and crate effect. You can find all the colors avaliable in the color list in this document
+# rarity: the chance between 0 and 100 to this crate be choosen to spawn
+# itemChance: the chance between 0 and 100 to any item be placed in some slot in the crate
+# sound: the sound that the crate will make when spawn. You can find all the sounds avaliable in the sound list in this document
+# loots: the list of possible loots in this crate
+# loots."ANY_NAME_YOU_LIKE": the name of the item section. This field should be have an unique name per crate
+# loots."ANY_NAME_YOU_LIKE".name: the minecraft id of the item
+# loots."ANY_NAME_YOU_LIKE".max: maximum quantity of the item that can spawn in each slot
+# loots."ANY_NAME_YOU_LIKE".min: minumim quantity of the item that can spawn in each slot
+# loots."ANY_NAME_YOU_LIKE".rarity: the name of one of the lootRarities
+# loots."ANY_NAME_YOU_LIKE".enchanted: tells if the item will be enchanted
+# loots."ANY_NAME_YOU_LIKE".enchantments: section for enchtaments info
+# loots."ANY_NAME_YOU_LIKE".enchantments.maxQuantity: maximum number of enchantments that the item can receive from the enchantments.list
+# loots."ANY_NAME_YOU_LIKE".enchantments.minQuantity: minimum number of enchantments that the item can receive from the enchantments.list
+# loots."ANY_NAME_YOU_LIKE".enchantments.list: list of enchantments
+# -----------------------------
+#
+# FORMAT (with sample values):
+# crates:
+#    crateName:
+#      name: master (Required)
+#      color: BLACK (Required)
+#      rarity: 55 (You can use decimals if you want, from 0 up to 100)
+#      itemChance: 100 (Required - You can use decimals if you want, from 0 up to 100)
+#      sound: ENTITY_ENDER_DRAGON_GROWL (Optional)
+#      loots: (Required)
+#         item1: (Optional)
+#            name: STICK (Required)
+#            max: 10 (Required)
+#            min: 1 (Required)
+#            rarity: legendary
+#            enchanted: true (Optinal - You can enter "false" or "true")
+#            enchantments: (If you set enchanted as true it its Required)
+#               maxQuantity: 3 (Required)
+#               minQuantity: 1 (Required)
+#               list: (Required)
+#                  - DEPTH_STRIDER
+#                  - FIRE_ASPECT
+#                  - MENDING
+    
+crates:
+   common:
+      name: common
+      color: WHITE
+      rarity: 55
+      itemChance: 40
+      sound: ENTITY_ENDER_DRAGON_GROWL
+      loots:
+         item1:
+            name: STICK
+            max: 5
+            min: 1
+            enchanted: false
+            rarity: common
+         item2:
+            name: FLINT
+            max: 3
+            min: 1   
+            enchanted: false
+            rarity: rare
+         item3:
+            name: FEATHER
+            max: 2
+            min: 1  
+            enchanted: false
+            rarity: common
+         item4:
+            name: COAL
+            max: 5
+            min: 1
+            enchanted: false
+            rarity: common
+         item5:
+            name: CHARCOAL
+            max: 10
+            min: 1 
+            enchanted: false
+            rarity: rare
+         item6:
+            name: ENCHANTED_BOOK
+            max: 1
+            min: 1
+            enchanted: true
+            rarity: epic
+            enchantments:
+               maxQuantity: 2
+               minQuantity: 1
+               list:
+                  - DEPTH_STRIDER
+                  - FIRE_ASPECT
+                  - MENDING
+         item7:
+           name: DIAMOND_SWORD
+           max: 1
+           min: 1
+           enchanted: true
+           rarity: legendary
+           enchantments:
+              maxQuantity: 2
+              minQuantity: 1
+              list:
+                 - DEPTH_STRIDER
+                 - FIRE_ASPECT
+                 - MENDING
+                 - SWEEPING
+   uncommon:
+      name: uncommon
+      color: GREEN
+      rarity: 31
+      itemChance: 30
+      sound: 
+      loots:
+         item1:
+            name: OAK_LEAVES
+            max: 64
+            min: 10
+            rarity: common
+            enchanted: false
+         item2:
+            name: BIRCH_LEAVES
+            max: 64
+            min: 2
+            rarity: uncommon
+            enchanted: false
+         item3:
+            name: SPRUCE_LEAVES
+            max: 64
+            min: 1
+            rarity: rare
+            enchanted: false
+         item4:
+            name: JUNGLE_LEAVES
+            max: 64
+            min: 1
+            rarity: epic
+            enchanted: false
+         item5:
+            name: DARK_OAK_LEAVES
+            max: 64
+            min: 1
+            rarity: legendary
+            enchanted: false
+   rare:
+      name: rare
+      color: BLUE
+      rarity: 10
+      itemChance: 45
+      sound: BLOCK_BEEHIVE_ENTER
+      loots:
+         item1:
+            name: IRON_ORE
+            max: 5
+            min: 1
+            enchanted: false
+            rarity: common
+         item2:
+            name: IRON_AXE
+            max: 1
+            min: 1   
+            enchanted: false
+            rarity: rare
+         item3:
+            name: WATER_BUCKET
+            max: 1
+            min: 1  
+            enchanted: false
+            rarity: common
+         item4:
+            name: ELYTRA
+            max: 1
+            min: 1
+            enchanted: false
+            rarity: common
+         item5:
+            name: END_STONE
+            max: 10
+            min: 1 
+            enchanted: false
+            rarity: rare
+         item6:
+            name: ENCHANTED_BOOK
+            max: 1
+            min: 1
+            enchanted: true
+            rarity: epic
+            enchantments:
+               maxQuantity: 2
+               minQuantity: 1
+               list:
+                  - DEPTH_STRIDER
+                  - FIRE_ASPECT
+                  - MENDING
+         item7:
+           name: DIAMOND_PICKAXE
+           max: 1
+           min: 1
+           enchanted: true
+           rarity: legendary
+           enchantments:
+              maxQuantity: 2
+              minQuantity: 1
+              list:
+                 - DEPTH_STRIDER
+                 - FIRE_ASPECT
+                 - MENDING
+                 - SWEEPING    
+   epic:
+      name: epic
+      color: PURPLE
+      rarity: 5   
+      itemChance: 50
+      sound: BLOCK_BEACON_ACTIVATE
+      loots:
+         item1:
+            name: BOW
+            max: 1
+            min: 1
+            enchanted: true
+            rarity: common
+            enchantments:
+               maxQuantity: 3
+               minQuantity: 0
+               list:
+                  - FLAME
+                  - INFINITY
+                  - POWER
+                  - PUNCH
+                  - MENDING
+         item2:
+            name: DIAMOND_BLOCK
+            max: 20
+            min: 1
+            enchanted: false
+            rarity: legendary
+         item3:
+            name: OBSIDIAN
+            max: 5
+            min: 1
+            rarity: rare
+         item4:
+            name: NETHER_STAR
+            max: 1
+            min: 1
+            enchanted: false
+            rarity: epic
+         item5:
+            name: BONE
+            max: 20
+            min: 2
+            rarity: common
+            enchanted: false
+         item6: 
+            name: DIAMOND_CHESTPLATE
+            max: 1
+            min: 1
+            rarity: epic
+            enchanted: true
+            enchantments:
+               maxQuantity: 1
+               minQuantity: 1
+               list:
+                  - MENDING
+                  - PROTECTION
+                  - THORNS
+                  - VANISHING_CURSE
+   legendary:
+      name: legendary
+      color: YELLOW
+      rarity: 1   
+      itemChance: 55
+      sound: ENTITY_MAGMA_CUBE_JUMP
+      loots:
+         item1:
+            name: BOW
+            max: 1
+            min: 1
+            enchanted: true
+            rarity: common
+            enchantments:
+               maxQuantity: 3
+               minQuantity: 0
+               list:
+                  - FLAME
+                  - INFINITY
+                  - POWER
+                  - PUNCH
+                  - MENDING
+         item2:
+            name: DIAMOND_BLOCK
+            max: 20
+            min: 1
+            enchanted: false
+            rarity: legendary
+         item3:
+            name: OBSIDIAN
+            max: 5
+            min: 1
+            rarity: rare
+         item4:
+            name: NETHER_STAR
+            max: 1
+            min: 1
+            enchanted: false
+            rarity: epic
+         item5:
+            name: BONE
+            max: 20
+            min: 2
+            rarity: common
+            enchanted: false
+         item6: 
+            name: DIAMOND_CHESTPLATE
+            max: 1
+            min: 1
+            rarity: epic
+            enchanted: true
+            enchantments:
+               maxQuantity: 1
+               minQuantity: 1
+               list:
+                  - MENDING
+                  - PROTECTION
+                  - THORNS
+                  - VANISHING_CURSE                
+                   
+            

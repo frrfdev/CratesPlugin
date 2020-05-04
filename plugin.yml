@@ -1,0 +1,14 @@
+name: CratesPlugin
+main: com.babi.crates.Main
+version: 1.0
+api-version: 1.13
+commands:
+   toggleDestroyCrates:
+      description: Toggle crate drop on breaking
+      usage: /toggleDestroyCrates 
+   toggleCrateType:
+      description: Toggle crate type
+      usage: /toggleCrateType
+   summonCrate:
+      description: summons a crate on the player location
+      usage: /summonCrate rarity type
